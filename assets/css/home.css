@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    background-color: #1e1e1e;
+}
+
+header {
+   display: flex;
+   align-items: center;
+   padding: 1.5vw 4vw;
+   justify-content: space-between;
+   background-color: transparent;
+   color: white;
+   width: 100%;
+   z-index: 1;
+   position: fixed;
+}
+
+.logo img {
+    width: 20vw;
+    height: 3vw;
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0 0.5vw;
+    font-size: 1.4vw;
+    position: relative;
+}
+
+.nav ul li a.underline::before {
+    content: '';
+    position: absolute;
+    bottom: -0.5vw;
+    left: 0.5vw;
+    width: 0;
+    height: 0.25vw;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+.nav ul li a.underline:hover::before {
+    width: calc(100% - 1vw);
+    left: 0.5vw;
+}
+
+.nav ul li a span {
+    color: #6e6e6e;
+}
+
+.cart {
+    color: white;
+    text-decoration: none;
+    padding: 0 2vw;
+}
+
+.cart span {
+    color: #6e6e6e;
+}
+
+.close {
+    display: none;
+}
+
+.mobile {
+    display: none;
+    align-items: center;
+}
+
+.user {
+    padding-left: 50px;
+}
+
+.header-scrolled {
+    background-color: #1e1e1e;
+    transition: background-color 0.3s ease;
+}
+
+.main {
+    position: relative;
+    min-height: 100vh;
+}
+
+.main h1 {
+    color: white;
+    position: absolute;
+    top: 12vw;
+    right: 1vw;
+    font-size: 6vw;
+}
+
+.main h2 {
+    color: darkgray;
+    position: absolute;
+    top: 20vw;
+    left: 10vw;
+    font-size: 5vw;
+    transform: rotate(270deg);
+}
+
+.main span {
+    -webkit-text-stroke: .1vw white;
+    color: #1e1e1e;
+}
+
+.background {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+}
+
+.main .rectangle {
+    position: absolute;
+    bottom: -2vw;
+    left: 0;
+    width: 100%;
+    height: 2vw;
+    background-color: #ba947b;
+}
+
+.second-section {
+    display: flex;
+    align-items: center;
+    padding: 5vw 5vw;
+    min-height: 100vh;
+    position: relative;
+    flex-direction: column;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10vw;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card {
+    width: 28vw;
+    height: 22vw;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #1e1e1e;
+    margin: 1vh;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+}
+
+.card h3 {
+    margin: 1vw;
+    text-align: center;
+    font-size: 2vw;
+}
+
+.second-section h2 {
+    position: absolute;
+    top: 1vw;
+    color: white;
+    font-size: 4vw;
+    margin: 5vw;
+}
+
+.third-section {
+    display: flex;
+    align-items: center;
+    padding: 5vw 8vw;
+    min-height: 100vh;
+    position: relative;
+    flex-direction: column;
+    background-color: #ba947b;
+}
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10vw;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.product {
+    position: relative;
+    width: 18vw;
+    height: 22vw;
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    margin: 1vh;
+    border-radius: 2vw;
+    overflow: hidden;
+}
+
+.opening {
+    position: absolute;
+    top: 1vw;
+    color: #1e1e1e;
+    font-size: 4vw;
+    margin: 5vw;
+}
+
+.watch {
+    width: 100%;
+    padding-left: 2vw;
+    padding-top: 2vw;
+    padding-right: 2vw;
+    z-index: 3;
+}
+
+.product h3 {
+    margin: 2vw;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.product h3 span{
+    color: #6e6e6e;
+}
+
+.product .product-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product:hover .product-overlay {
+    opacity: 1; 
+}
+
+.add {
+    background-color: transparent;
+    color: #1e1e1e;
+    border: 0.2vw solid #1e1e1e;
+    padding: 1vw 3vw;
+    font-size: 1vw;
+    cursor: pointer;
+}
+
+.add:hover {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.ending {
+    position: absolute;
+    bottom: 1vw;
+    color: #1e1e1e;
+    font-size: 4vw;
+    margin: 5vw;
+}
+
+@media only screen and (max-width: 1900px) {
+    .rectangle{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1700px) {
+    .main {
+        min-height: 85vh;
+    }
+    
+    .second-section{
+        min-height: 85vh;
+    }
+
+    .third-section{
+        min-height: 85vh;
+    }
+}
+
+@media only screen and (max-width: 1500px) {
+    .main {
+        min-height: 70vh;
+    }
+
+    .second-section{
+        min-height: 70vh;
+    }
+
+    .third-section{
+        min-height: 70vh;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .main {
+        min-height: 60vh;
+    }
+
+    .second-section{
+        min-height: 60vh;
+    }
+
+    .third-section{
+        min-height: 60vh;
+    }
+}
+
+@media only screen and (max-width: 1020px) {
+    .main {
+        min-height: 50vh;
+    }
+
+    .second-section{
+        min-height: 50vh;
+        padding: 5vw 3vw;
+    }
+
+    .third-section{
+        min-height: 50vh;
+        padding: 5vw 1vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .main {
+        min-height: 40vh;
+    }
+
+    .second-section{
+        min-height: 40vh;
+    }
+
+    .third-section{
+        min-height: 40vh;
+        padding: 5vw 5vw;
+    }
+
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 50vw;
+        height: 40vw;
+    }
+
+    .card h3 {
+        font-size: 4vw;
+    }
+
+    .products {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .product {
+        width: 35vw;
+        height: 45vw;
+        margin: 1vw;
+    }
+
+    .product h3 {
+        margin: 2vw;
+        text-align: center;
+        font-size: 3vw;
+    }
+
+    .add {
+        border: 0.4vw solid #1e1e1e;
+        font-size: 2.5vw;
+    }
+
+    .second-section h2 {
+        font-size: 6vw;
+    }
+
+    .opening {
+        font-size: 6vw;
+    }
+
+    .ending {
+        font-size: 6vw;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        height: 100vh;
+        width: 200px;
+        background-color: #1e1e1e;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;
+    }
+
+    .nav ul li a {
+        font-size: 3vw;
+    }
+
+    .navbar.active {
+        right: 0px;
+    }
+
+    .navbar li{
+        margin-bottom: 2vw;
+    }
+
+    .mobile {
+        display: flex;
+        align-items: center;
+    }
+
+    .close {
+        display: inline;
+        position: absolute;
+        top: 3vw;
+        left: 3vw;
+        color: white;
+        font-size: 3vw;
+    }
+
+    #non {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main {
+        min-height: 30vh;
+    }
+
+    .second-section{
+        min-height: 30vh;
+        padding: 5vw 1vw;
+    }
+
+    .third-section{
+        min-height: 30vh;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .main {
+        min-height: 22vh;
+    }
+
+    .second-section{
+        min-height: 22vh;
+        padding: 5vw 0.5vw;
+    }
+
+    .third-section{
+        min-height: 22vh;
+        padding: 5vw 3vw;
+    }
+}
+
+@media only screen and (min-height: 1200px) {
+    .main {
+        min-height: 35vh;
+    }
+
+    .second-section{
+        min-height: 35vh;
+        padding: 5vw 3vw;
+    }
+
+    .third-section{
+        min-height: 35vh;
+        padding: 5vw 5vw;
+    }
+}
